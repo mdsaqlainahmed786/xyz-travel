@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { MapPin, Calendar, Search } from 'lucide-react';
 
 const backgrounds = [
   "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg",
@@ -43,36 +42,6 @@ const Hero: React.FC = () => {
         </p>
         
         {/* Search Form */}
-        <div className="w-full max-w-4xl bg-opacity-10 backdrop-blur-md rounded-lg p-4 md:p-6 animate-fade-in-delay-2">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <MapPin className="h-5 w-5 text-white" />
-              </div>
-              <input
-                type="text"
-                placeholder="Where to?"
-                className="block w-full pl-10 pr-3 py-3 border rounded-lg border-white bg-opacity-20 focus:bg-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Calendar className="h-5 w-5 text-white" />
-              </div>
-              <input
-                type="text"
-                placeholder="When?"
-                className="block w-full pl-10 pr-3 py-3 border border-white rounded-lg bg-opacity-20 focus:bg-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            
-            <button className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
-              <Search className="mr-2 h-5 w-5" />
-              Search Trips
-            </button>
-          </div>
-        </div>
       </div>
       
       {/* Scroll Indicator */}

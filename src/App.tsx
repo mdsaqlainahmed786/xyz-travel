@@ -1,25 +1,57 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import Hero from './components/Hero';
 import FeaturedDestinations from './components/FeaturedDestinations';
-// import PopularDestinations from './components/PopularDestinations';
 import Testimonials from './components/Testimonials';
-// import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
+import SearchResults from './components/SearchResults';
 import { destinations } from './destination';
 
-function App() {
-  // Filter featured destinations
+const HomePage = () => {
+  const navigate = useNavigate();
   const featuredDestinations = destinations.filter(dest => dest.featured);
   
+  const handleSearch = (query: string) => {
+    navigate(`/search?q=${encodeURIComponent(query)}`);
+  };
+  
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
+    <>
+      <Navbar onSearch={handleSearch} />
+      <Hero/>
       <FeaturedDestinations destinations={featuredDestinations} />
       <Testimonials />
       <Footer />
-    </div>
+    </>
+  );
+};
+
+const SearchPage = () => {
+  const navigate = useNavigate();
+  
+  const handleSearch = (query: string) => {
+    navigate(`/search?q=${encodeURIComponent(query)}`);
+  };
+  
+  return (
+    <>
+      <Navbar onSearch={handleSearch} />
+      <SearchResults destinations={destinations} />
+      <Footer />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
