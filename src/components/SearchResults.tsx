@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { Destination } from '../destination';
 import { Sliders as Slider, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface SearchResultsProps {
   destinations: Destination[];
@@ -13,7 +14,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ destinations }) => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
   const [duration, setDuration] = useState<string[]>([]);
   const [location, setLocation] = useState<string[]>([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const query = searchParams.get('q');
     if (query) {
@@ -143,6 +144,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ destinations }) => {
                 <div
                   key={destination.id}
                   className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                    onClick={() => navigate(`/trip/${destination.id}`)}
                 >
                   <div className="relative h-48">
                     <img

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import type { Destination } from '../destination';
+import { useNavigate } from 'react-router-dom';
 
 interface FeaturedDestinationsProps {
   destinations: Destination[];
@@ -8,7 +9,7 @@ interface FeaturedDestinationsProps {
 
 const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({ destinations }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+  const navigate = useNavigate();
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % destinations.length);
   };
@@ -109,7 +110,9 @@ const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({ destination
                           <p className="text-2xl font-bold text-blue-600">${destination.price}</p>
                           <p className="text-gray-500 text-sm">{destination.duration}</p>
                         </div>
-                        <button className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300">
+                        <button 
+                        onClick={() => navigate(`/trip/${destination.id}`)}
+                        className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300">
                           View Details
                         </button>
                       </div>

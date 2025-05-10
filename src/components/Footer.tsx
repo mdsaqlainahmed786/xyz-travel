@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -16,15 +17,15 @@ const Footer: React.FC = () => {
               Creating unforgettable travel experiences since 2005. Let us help you discover the world.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              </Link>
+              <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              </Link>
+              <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Instagram size={20} />
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -33,19 +34,19 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Home</a>
+                <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">Home</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Destinations</a>
+                <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">Destinations</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Travel Deals</a>
+                <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">Travel Deals</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</a>
+                <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Contact</a>
+                <Link to="" className="text-gray-400 hover:text-blue-400 transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
@@ -94,9 +95,9 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
           <p>&copy; {new Date().getFullYear()} XYZ Travel Agency. All rights reserved.</p>
           <div className="mt-2 space-x-4">
-            <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">Cookie Policy</a>
+            <Link to="" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
+            <Link to="" className="hover:text-blue-400 transition-colors">Terms of Service</Link>
+            <Link to="" className="hover:text-blue-400 transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

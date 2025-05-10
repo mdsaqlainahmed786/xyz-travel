@@ -6,6 +6,7 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import SearchResults from './components/SearchResults';
 import { destinations } from './destination';
+import TripDetail from './components/TripDetail';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path = "/trip/:id"  element={<TripDetail destinations={destinations} />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Search, Menu, X, Globe } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
   onSearch: (query: string) => void;
@@ -9,6 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+    const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,9 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="text-2xl font-bold flex items-center">
+          <div
+          onClick={()=>navigate('/')}
+          className="text-2xl cursor-pointer font-bold flex items-center">
             <Globe
               className={`mr-2 ${isScrolled ? "text-blue-600" : "text-white"}`}
             />
