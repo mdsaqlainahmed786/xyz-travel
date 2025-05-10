@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MapPin, Clock, Star, Users, Globe, Sun, Umbrella } from 'lucide-react';
 import type { Destination } from '../destination';
-import Navbar from './NavBar';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
 interface TripDetailProps {
